@@ -56,12 +56,8 @@ function merge(left, right) {
   }
 
   // Add remaining elements from left and right halfs
-  for (; leftIndex < left.length; leftIndex++) {
-    mergedArray.push(left[leftIndex]);
-  }
-  for (; rightIndex < right.length; rightIndex++) {
-    mergedArray.push(right[rightIndex]);
-  }
+  mergedArray.push(...left.slice(leftIndex));
+  mergedArray.push(...right.slice(rightIndex));
 
   return mergedArray;
 }
